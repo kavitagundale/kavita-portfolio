@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Github } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
@@ -63,15 +64,57 @@ const Hero = () => {
           
           <motion.div 
             className="w-full md:w-1/2 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8,
+              delay: 0.3
+            }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
-                <span className="text-lg">Your Photo</span>
+            <motion.div 
+              className="relative w-64 h-64 md:w-80 md:h-80"
+              animate={{ 
+                boxShadow: [
+                  "0px 0px 0px rgba(59, 130, 246, 0)",
+                  "0px 0px 30px rgba(59, 130, 246, 0.5)",
+                  "0px 0px 0px rgba(59, 130, 246, 0)"
+                ]
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-primary/20 p-1">
+                <div className="w-full h-full rounded-full overflow-hidden relative">
+                  {/* Photo placeholder with animated gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-background to-primary/20 animate-pulse" />
+                  
+                  <Avatar className="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-lg hover:scale-[1.03] transition-transform">
+                    <AvatarImage 
+                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
+                      alt="Profile Photo" 
+                      className="object-cover" 
+                    />
+                    <AvatarFallback className="text-3xl">JD</AvatarFallback>
+                  </Avatar>
+                  
+                  {/* Animated rings around the photo */}
+                  <motion.div 
+                    className="absolute inset-[-10px] rounded-full border-4 border-primary/20"
+                    animate={{ scale: [1, 1.05, 1], rotate: [0, 360] }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  />
+                  
+                  <motion.div 
+                    className="absolute inset-[-25px] rounded-full border-2 border-primary/10"
+                    animate={{ scale: [1, 1.1, 1], rotate: [360, 0] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
