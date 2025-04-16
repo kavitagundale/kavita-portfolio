@@ -4,6 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Github } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Hero = () => {
   return (
@@ -86,12 +87,41 @@ const Hero = () => {
                 ease: "easeInOut"
               }}
             >
-              <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-primary/20 p-1">
+              {/* Circular glowing backdrop */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 via-primary/10 to-transparent"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              
+              <div className="absolute inset-0 rounded-full overflow-hidden p-2">
                 <div className="w-full h-full rounded-full overflow-hidden relative">
-                  {/* Photo placeholder with animated gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-background to-primary/20 animate-pulse" />
+                  {/* Animated gradient background */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20"
+                    animate={{
+                      background: [
+                        "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
+                        "linear-gradient(225deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
+                        "linear-gradient(315deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
+                        "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                  />
                   
-                  <Avatar className="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-lg hover:scale-[1.03] transition-transform">
+                  <Avatar className="w-full h-full rounded-full shadow-lg hover:scale-[1.03] transition-transform duration-300">
                     <AvatarImage 
                       src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
                       alt="Profile Photo" 
@@ -100,20 +130,60 @@ const Hero = () => {
                     <AvatarFallback className="text-3xl">JD</AvatarFallback>
                   </Avatar>
                   
-                  {/* Animated rings around the photo */}
+                  {/* Rotating orbital rings */}
                   <motion.div 
-                    className="absolute inset-[-10px] rounded-full border-4 border-primary/20"
-                    animate={{ scale: [1, 1.05, 1], rotate: [0, 360] }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-[-8px] rounded-full border border-primary/30"
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   />
                   
                   <motion.div 
-                    className="absolute inset-[-25px] rounded-full border-2 border-primary/10"
-                    animate={{ scale: [1, 1.1, 1], rotate: [360, 0] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-[-16px] rounded-full border border-primary/20"
+                    animate={{ rotate: [360, 0] }}
+                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  />
+                  
+                  <motion.div 
+                    className="absolute inset-[-24px] rounded-full border border-primary/10"
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                   />
                 </div>
               </div>
+              
+              {/* Particle effects */}
+              <motion.div
+                className="absolute w-4 h-4 rounded-full bg-primary/60 blur-sm"
+                animate={{
+                  x: [0, 30, 10, -20, 0],
+                  y: [0, -20, 10, 15, 0],
+                  opacity: [0, 1, 0.5, 0],
+                  scale: [0, 1, 0.5, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                style={{ top: '30%', left: '10%' }}
+              />
+              
+              <motion.div
+                className="absolute w-3 h-3 rounded-full bg-accent/60 blur-sm"
+                animate={{
+                  x: [0, -15, 10, 25, 0],
+                  y: [0, 20, 0, -20, 0],
+                  opacity: [0, 0.8, 0.2, 0],
+                  scale: [0, 0.8, 0.3, 0],
+                }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 1.5,
+                }}
+                style={{ top: '60%', right: '15%' }}
+              />
             </motion.div>
           </motion.div>
         </div>
