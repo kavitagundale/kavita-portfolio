@@ -1,9 +1,9 @@
+
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Github } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Hero = () => {
   return (
@@ -98,11 +98,11 @@ const Hero = () => {
               />
               
               <div className="relative z-10 w-full h-full">
-                <Avatar className="w-full h-full rounded-full shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                <Avatar className="w-full h-full rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105 shadow-lg">
                   <AvatarImage 
                     src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
                     alt="Profile Photo" 
-                    className="object-cover" 
+                    className="object-cover w-full h-full" 
                   />
                   <AvatarFallback className="text-3xl">JD</AvatarFallback>
                 </Avatar>
