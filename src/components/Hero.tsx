@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from "@/components/ui/button";
@@ -73,117 +72,41 @@ const Hero = () => {
             }}
           >
             <motion.div 
-              className="relative w-64 h-64 md:w-80 md:h-80"
-              animate={{ 
-                boxShadow: [
-                  "0px 0px 0px rgba(59, 130, 246, 0)",
-                  "0px 0px 30px rgba(59, 130, 246, 0.5)",
-                  "0px 0px 0px rgba(59, 130, 246, 0)"
-                ]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
+              className="relative group w-64 h-64 md:w-80 md:h-80"
+              whileHover={{
+                scale: 1.05,
+                transition: { 
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 300
+                }
               }}
             >
-              {/* Circular glowing backdrop */}
+              {/* Circular glow effect on hover */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 via-primary/10 to-transparent"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+                className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                initial={{ scale: 1, opacity: 0 }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  opacity: 0.7,
+                  transition: { 
+                    duration: 0.3,
+                    type: "spring",
+                    stiffness: 200
+                  }
                 }}
               />
               
-              <div className="absolute inset-0 rounded-full overflow-hidden p-2">
-                <div className="w-full h-full rounded-full overflow-hidden relative">
-                  {/* Animated gradient background */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20"
-                    animate={{
-                      background: [
-                        "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
-                        "linear-gradient(225deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
-                        "linear-gradient(315deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)",
-                        "linear-gradient(45deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
+              <div className="relative z-10 w-full h-full">
+                <Avatar className="w-full h-full rounded-full shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                  <AvatarImage 
+                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Profile Photo" 
+                    className="object-cover" 
                   />
-                  
-                  <Avatar className="w-full h-full rounded-full shadow-lg hover:scale-[1.03] transition-transform duration-300">
-                    <AvatarImage 
-                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
-                      alt="Profile Photo" 
-                      className="object-cover" 
-                    />
-                    <AvatarFallback className="text-3xl">JD</AvatarFallback>
-                  </Avatar>
-                  
-                  {/* Rotating orbital rings */}
-                  <motion.div 
-                    className="absolute inset-[-8px] rounded-full border border-primary/30"
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  />
-                  
-                  <motion.div 
-                    className="absolute inset-[-16px] rounded-full border border-primary/20"
-                    animate={{ rotate: [360, 0] }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  />
-                  
-                  <motion.div 
-                    className="absolute inset-[-24px] rounded-full border border-primary/10"
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  />
-                </div>
+                  <AvatarFallback className="text-3xl">JD</AvatarFallback>
+                </Avatar>
               </div>
-              
-              {/* Particle effects */}
-              <motion.div
-                className="absolute w-4 h-4 rounded-full bg-primary/60 blur-sm"
-                animate={{
-                  x: [0, 30, 10, -20, 0],
-                  y: [0, -20, 10, 15, 0],
-                  opacity: [0, 1, 0.5, 0],
-                  scale: [0, 1, 0.5, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                style={{ top: '30%', left: '10%' }}
-              />
-              
-              <motion.div
-                className="absolute w-3 h-3 rounded-full bg-accent/60 blur-sm"
-                animate={{
-                  x: [0, -15, 10, 25, 0],
-                  y: [0, 20, 0, -20, 0],
-                  opacity: [0, 0.8, 0.2, 0],
-                  scale: [0, 0.8, 0.3, 0],
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  delay: 1.5,
-                }}
-                style={{ top: '60%', right: '15%' }}
-              />
             </motion.div>
           </motion.div>
         </div>
