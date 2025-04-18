@@ -78,14 +78,14 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState(skillCategories[0].id);
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
-      <div className="container px-4 md:px-6">
+    <section id="skills" className="py-8 sm:py-12 md:py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50">
+      <div className="container px-4 sm:px-6">
         <SectionHeader 
           title="My Skills"
           subtitle="Here are the technologies and tools I specialize in"
         />
         
-        <div className="grid md:grid-cols-4 gap-6 lg:gap-12">
+        <div className="grid md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {/* Categories for desktop */}
           <div className="hidden md:block">
             <div className="space-y-2 sticky top-24">
@@ -94,34 +94,34 @@ const Skills = () => {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "flex items-center w-full px-4 py-3 text-left rounded-lg transition-all",
+                    "flex items-center w-full px-3 py-2.5 text-left rounded-lg transition-all text-sm lg:text-base",
                     activeCategory === category.id 
                       ? "bg-primary text-white shadow-md"
                       : "hover:bg-gray-100 dark:hover:bg-gray-800"
                   )}
                 >
-                  <category.icon className="mr-3 h-5 w-5" />
+                  <category.icon className="mr-2.5 h-4 w-4 lg:h-5 lg:w-5" />
                   <span className="font-medium">{category.name}</span>
                 </button>
               ))}
             </div>
           </div>
           
-          {/* Categories for mobile */}
-          <div className="md:hidden mb-8">
-            <div className="flex overflow-x-auto pb-3 space-x-3 scrollbar-none">
+          {/* Categories for mobile - Horizontal scrollable list */}
+          <div className="md:hidden -mx-4 px-4 mb-6">
+            <div className="flex overflow-x-auto pb-3 space-x-2 scrollbar-none">
               {skillCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "flex items-center px-4 py-2 rounded-full whitespace-nowrap transition-all",
+                    "flex items-center shrink-0 px-3 py-2 rounded-full text-sm transition-all",
                     activeCategory === category.id 
                       ? "bg-primary text-white"
                       : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                   )}
                 >
-                  <category.icon className="mr-2 h-4 w-4" />
+                  <category.icon className="mr-1.5 h-4 w-4" />
                   <span>{category.name}</span>
                 </button>
               ))}
@@ -134,7 +134,7 @@ const Skills = () => {
               <div
                 key={category.id}
                 className={cn(
-                  "grid grid-cols-1 sm:grid-cols-2 gap-5",
+                  "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4",
                   activeCategory !== category.id && "hidden"
                 )}
               >
@@ -144,25 +144,25 @@ const Skills = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="flex justify-between items-center mb-3">
-                      <h3 className="font-semibold">{skill.name}</h3>
+                    <div className="flex justify-between items-center mb-2.5">
+                      <h3 className="font-semibold text-sm sm:text-base">{skill.name}</h3>
                       <div className="flex">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <div 
                             key={i}
                             className={cn(
-                              "w-2 h-2 rounded-full mx-0.5",
+                              "w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mx-0.5",
                               i < skill.level ? "bg-primary" : "bg-gray-200 dark:bg-gray-700"
                             )}
                           />
                         ))}
                       </div>
                     </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
                       <div 
-                        className="bg-primary h-2 rounded-full transition-all duration-700 ease-out"
+                        className="bg-primary h-1.5 sm:h-2 rounded-full transition-all duration-700 ease-out"
                         style={{ width: `${(skill.level / 5) * 100}%` }}
                       />
                     </div>
