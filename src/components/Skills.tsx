@@ -109,20 +109,20 @@ const Skills = () => {
           
           {/* Categories for mobile - Horizontal scrollable list */}
           <div className="md:hidden -mx-4 px-4 mb-6">
-            <div className="flex overflow-x-auto pb-3 space-x-2 scrollbar-none">
+            <div className="flex overflow-x-auto pb-3 space-x-2 hide-scrollbar">
               {skillCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "flex items-center shrink-0 px-3 py-2 rounded-full text-sm transition-all",
+                    "flex items-center shrink-0 px-3 py-2.5 rounded-full text-sm transition-all",
                     activeCategory === category.id 
                       ? "bg-primary text-white"
                       : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                   )}
                 >
                   <category.icon className="mr-1.5 h-4 w-4" />
-                  <span>{category.name}</span>
+                  <span className="whitespace-nowrap">{category.name}</span>
                 </button>
               ))}
             </div>
@@ -144,9 +144,9 @@ const Skills = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="flex justify-between items-center mb-2.5">
+                    <div className="flex justify-between items-center mb-2 sm:mb-2.5">
                       <h3 className="font-semibold text-sm sm:text-base">{skill.name}</h3>
                       <div className="flex">
                         {Array.from({ length: 5 }).map((_, i) => (
