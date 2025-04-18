@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from "@/components/ui/button";
@@ -61,41 +62,42 @@ const Hero = () => {
             </div>
           </motion.div>
           
-        <motion.div 
-          className="w-full md:w-1/2 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.8,
-            delay: 0.3
-          }}
-        >
           <motion.div 
-            className="relative group w-64 h-64 md:w-80 md:h-80"
-            whileHover={{
-              scale: 1.05,
-              transition: { 
-                duration: 0.3,
-                type: "spring",
-                stiffness: 300
-              }
+            className="w-full md:w-1/2 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8,
+              delay: 0.3
             }}
           >
-            {/* Stylish glow and shadow effect */}
-            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-all duration-300 ease-in-out"></div>
-            
-            <div className="relative z-10 w-full h-full">
-              <Avatar className="w-full h-full rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105 shadow-lg">
-                <AvatarImage 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Profile Photo" 
-                  className="object-cover w-full h-full" 
-                />
-                <AvatarFallback className="text-3xl">JD</AvatarFallback>
-              </Avatar>
-            </div>
+            <motion.div 
+              className="relative group w-64 h-64 md:w-80 md:h-80"
+              whileHover={{
+                scale: 1.05,
+                transition: { 
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 300
+                }
+              }}
+            >
+              {/* Stylish glow and shadow effect */}
+              <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-all duration-300 ease-in-out"></div>
+              
+              <div className="relative z-10 w-full h-full">
+                <Avatar className="w-full h-full rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105 shadow-lg">
+                  <AvatarImage 
+                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Profile Photo" 
+                    className="object-cover w-full h-full" 
+                  />
+                  <AvatarFallback className="text-3xl">JD</AvatarFallback>
+                </Avatar>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
