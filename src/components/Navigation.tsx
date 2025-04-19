@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -58,7 +57,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
         <a href="#home" className="text-xl font-bold text-primary">
-          Portfolio
+          Kavita Gundale
         </a>
         
         {/* Desktop Navigation */}

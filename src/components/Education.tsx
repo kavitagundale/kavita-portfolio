@@ -20,23 +20,7 @@ const educationItems: EducationItem[] = [
 const certifications = [
   { 
     name: "Full Stack Developer Certification", 
-    issuer: "Professional Certification", 
-    year: "2023" 
-  },
-  { 
-    name: "AWS Certified Developer", 
-    issuer: "Amazon Web Services", 
-    year: "2022" 
-  },
-  { 
-    name: "React Developer Certification", 
-    issuer: "Meta", 
-    year: "2021" 
-  },
-  { 
-    name: "PHP Advanced Certification", 
-    issuer: "PHP.org", 
-    year: "2020" 
+    issuer: "Professional Certification"
   }
 ];
 
@@ -124,7 +108,7 @@ const Education = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">{cert.name}</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{cert.issuer} • {cert.year}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{cert.issuer}</p>
                 </div>
               </motion.div>
             ))}

@@ -11,7 +11,7 @@ const projects = [
     title: "Charitable Website",
     description: "A platform facilitating donations, volunteer management, and event organization",
     icon: Heart,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6",
     achievements: [
       "Facilitated 500+ donations",
       "Managed 100+ volunteer registrations",
@@ -24,7 +24,7 @@ const projects = [
     title: "Class Management System",
     description: "Responsive UI and backend system for managing class entries",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     achievements: [
       "Managed 200+ class entries",
       "Improved accessibility",
@@ -37,7 +37,7 @@ const projects = [
     title: "Water Purifier Website",
     description: "Fully responsive e-commerce website for water purification products",
     icon: Droplets,
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "https://images.unsplash.com/photo-1548222744-3f3c9624832f",
     achievements: [
       "30% boost in user engagement",
       "100+ products managed",
@@ -50,7 +50,7 @@ const projects = [
     title: "School & College Software",
     description: "Comprehensive educational management system",
     icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
     achievements: [
       "Supported 5000+ users",
       "Enhanced system performance",
