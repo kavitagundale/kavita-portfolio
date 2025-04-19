@@ -37,7 +37,7 @@ const projects = [
     title: "Water Purifier Website",
     description: "Fully responsive e-commerce website for water purification products",
     icon: Droplets,
-    image: "https://images.unsplash.com/photo-1548222744-3f3c9624832f",
+    image: "https://images.unsplash.com/photo-1544042104-14d5704c967a",
     achievements: [
       "30% boost in user engagement",
       "100+ products managed",
