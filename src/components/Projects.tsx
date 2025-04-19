@@ -1,6 +1,7 @@
+
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Heart, Users, Droplets, GraduationCap } from "lucide-react";
 
