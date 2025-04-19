@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { Briefcase, Calendar } from "lucide-react";
@@ -12,36 +11,27 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    duration: "Jan 2022 - Present",
+    title: "IT Trainer",
+    company: "Smartpacey Technologies Pvt.Ltd.",
+    duration: "October 2024 - Present",
     description: [
-      "Led the development of a high-traffic e-commerce platform using React, Node.js, and MongoDB",
-      "Implemented CI/CD pipelines that reduced deployment time by 40%",
-      "Mentored junior developers and conducted code reviews",
-      "Optimized database queries resulting in 50% faster page load times"
-    ]
-  },
-  {
-    title: "Frontend Developer",
-    company: "Creative Web Agency",
-    duration: "Jun 2020 - Dec 2021",
-    description: [
-      "Developed responsive web applications using modern JavaScript frameworks",
-      "Collaborated with designers to implement pixel-perfect UI components",
-      "Integrated third-party APIs and services",
-      "Improved site performance by implementing lazy loading and code splitting"
+      "Designed and developed 50+ custom learning materials, coding exercises, and real-world projects, improving hands-on learning for 200+ students",
+      "Provided one-on-one mentorship to 100+ students, assisting in debugging, optimizing code, and strengthening problem-solving skills, leading to a 30% improvement in coding efficiency",
+      "Built a custom CMS for 500+ assignment submissions and real-time progress tracking, streamlining learning management for multiple batches of students",
+      "Guided students in deploying 50+ web applications and configuring hosting environments, ensuring real-world readiness",
+      "Trained students in version control (Git, GitHub), coding best practices, and technical interview preparation, contributing to a 40% increase in job placements"
     ]
   },
   {
     title: "PHP Developer",
-    company: "Digital Solutions",
-    duration: "Jan 2019 - May 2020",
+    company: "Comzent Technologies Pvt.Ltd.",
+    duration: "Jun 2023 - September 2024",
     description: [
-      "Built custom WordPress themes and plugins for clients",
-      "Maintained and upgraded legacy PHP applications",
-      "Implemented database design and optimization",
-      "Collaborated with the QA team to ensure high-quality deliverables"
+      "Optimized database queries, reducing load time by 40%",
+      "Developed and maintained multiple web applications and software solutions using PHP, ensuring performance and scalability",
+      "Implemented preventive maintenance strategies, resulting in a 20% decrease in equipment downtime",
+      "Collaborated with cross-functional teams to design, develop, and implement new features, enhancing functionality and user experience",
+      "Implemented a custom CMS solution for the website, software reducing content management time by 50% and improving overall website and software functionality"
     ]
   }
 ];

@@ -1,35 +1,22 @@
-
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { GraduationCap, Calendar, Award, BookOpen } from "lucide-react";
 
 interface EducationItem {
   degree: string;
-  institution: string;
+  institution?: string;
   duration: string;
   description?: string;
-  courses?: string[];
+  certifications?: string[];
 }
 
 const educationItems: EducationItem[] = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
-    duration: "2016 - 2020",
-    description: "Graduated with honors. Focused on web development and software engineering principles.",
-    courses: [
-      "Advanced Web Development",
-      "Database Systems",
-      "Data Structures & Algorithms",
-      "Software Engineering Practices",
-      "Mobile Application Development"
+    degree: "Bachelor's Degree in Mechanical Engineering",
+    duration: "Aug 2016 - Oct 2019",
+    certifications: [
+      "Full Stack Developer Certification"
     ]
-  },
-  {
-    degree: "Web Development Bootcamp",
-    institution: "Tech Academy",
-    duration: "2015",
-    description: "Intensive 12-week program covering full-stack development fundamentals."
   }
 ];
 
@@ -59,10 +46,12 @@ const Education = () => {
                 
                 <div>
                   <h3 className="text-xl font-bold mb-1">{item.degree}</h3>
-                  <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
-                    <BookOpen className="w-4 h-4 mr-1" />
-                    <span>{item.institution}</span>
-                  </div>
+                  {item.institution && (
+                    <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
+                      <BookOpen className="w-4 h-4 mr-1" />
+                      <span>{item.institution}</span>
+                    </div>
+                  )}
                   
                   <div className="flex items-center text-gray-500 dark:text-gray-500 mb-4">
                     <Calendar className="w-4 h-4 mr-1" />
@@ -75,17 +64,17 @@ const Education = () => {
                     </p>
                   )}
                   
-                  {item.courses && item.courses.length > 0 && (
+                  {item.certifications && item.certifications.length > 0 && (
                     <div>
                       <h4 className="text-sm font-semibold mb-2 flex items-center">
                         <Award className="w-4 h-4 mr-1" />
-                        Relevant Coursework
+                        Certifications
                       </h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {item.courses.map((course, idx) => (
+                        {item.certifications.map((cert, idx) => (
                           <li key={idx} className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
                             <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
-                            {course}
+                            {cert}
                           </li>
                         ))}
                       </ul>

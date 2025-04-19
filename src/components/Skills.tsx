@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
@@ -7,6 +6,8 @@ import {
   Database, 
   Server, 
   Wrench,
+  GitBranch,
+  Cloud,
   Layers,
   FileCode,
   FileBadge,
@@ -30,48 +31,69 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     id: "frontend",
-    name: "Frontend",
-    icon: Layers,
+    name: "Frontend Development",
+    icon: Code,
     skills: [
-      { name: "HTML", level: 5 },
-      { name: "CSS", level: 5 },
+      { name: "HTML5", level: 5 },
+      { name: "CSS3", level: 5 },
       { name: "JavaScript", level: 5 },
       { name: "React.js", level: 4 },
+      { name: "Next.js", level: 4 },
+      { name: "Tailwind CSS", level: 4 },
       { name: "Bootstrap", level: 4 },
-      { name: "jQuery", level: 3 },
+      { name: "Material-UI", level: 4 },
+      { name: "Redux", level: 4 },
     ]
   },
   {
     id: "backend",
-    name: "Backend",
+    name: "Backend Development",
     icon: Server,
     skills: [
-      { name: "PHP", level: 4 },
       { name: "Node.js", level: 4 },
-      { name: "Express.js", level: 3 },
+      { name: "Python", level: 4 },
+      { name: "Django", level: 4 },
+      { name: "PHP", level: 5 },
+      { name: "WordPress", level: 4 },
+      { name: "C#", level: 3 },
+      { name: "Express.js", level: 4 },
+      { name: "Laravel", level: 4 },
+      { name: "CodeIgniter", level: 4 },
     ]
   },
   {
     id: "database",
-    name: "Database",
+    name: "Database Management",
     icon: Database,
     skills: [
-      { name: "MySQLi", level: 4 },
-      { name: "MongoDB", level: 3 },
+      { name: "MongoDB", level: 4 },
+      { name: "MySQL", level: 5 },
+      { name: "PostgreSQL", level: 4 },
+      { name: "SQL", level: 4 },
     ]
   },
   {
-    id: "tools",
-    name: "Other Tools",
-    icon: Wrench,
+    id: "vcs",
+    name: "Version Control",
+    icon: GitBranch,
     skills: [
-      { name: "Git", level: 4 },
-      { name: "GitHub", level: 4 },
-      { name: "Postman", level: 3 },
-      { name: "AJAX", level: 4 },
-      { name: "VS Code", level: 5 },
+      { name: "Git", level: 5 },
+      { name: "GitHub", level: 5 },
     ]
   },
+  {
+    id: "devops",
+    name: "DevOps & Cloud",
+    icon: Cloud,
+    skills: [
+      { name: "AWS EC2", level: 4 },
+      { name: "AWS S3", level: 4 },
+      { name: "AWS Lambda", level: 3 },
+      { name: "AWS RDS", level: 3 },
+      { name: "Docker", level: 4 },
+      { name: "Kubernetes", level: 3 },
+    ]
+  }
 ];
 
 const Skills = () => {
