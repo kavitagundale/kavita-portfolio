@@ -4,12 +4,14 @@ import SectionHeader from "./SectionHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Heart, Users, Droplets, GraduationCap } from "lucide-react";
+import { AspectRatio } from "./ui/aspect-ratio";
 
 const projects = [
   {
     title: "Charitable Website",
     description: "A platform facilitating donations, volunteer management, and event organization",
     icon: Heart,
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     achievements: [
       "Facilitated 500+ donations",
       "Managed 100+ volunteer registrations",
@@ -22,6 +24,7 @@ const projects = [
     title: "Class Management System",
     description: "Responsive UI and backend system for managing class entries",
     icon: Users,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     achievements: [
       "Managed 200+ class entries",
       "Improved accessibility",
@@ -34,6 +37,7 @@ const projects = [
     title: "Water Purifier Website",
     description: "Fully responsive e-commerce website for water purification products",
     icon: Droplets,
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     achievements: [
       "30% boost in user engagement",
       "100+ products managed",
@@ -46,6 +50,7 @@ const projects = [
     title: "School & College Software",
     description: "Comprehensive educational management system",
     icon: GraduationCap,
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     achievements: [
       "Supported 5000+ users",
       "Enhanced system performance",
@@ -65,7 +70,7 @@ const Projects = () => {
           subtitle="A selection of my best work"
         />
         
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -75,6 +80,15 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <Card className="h-full flex flex-col">
+                <div className="p-6">
+                  <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg overflow-hidden mb-4">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full transition-transform hover:scale-105"
+                    />
+                  </AspectRatio>
+                </div>
                 <CardHeader className="space-y-1">
                   <div className="flex items-center">
                     <project.icon className="mr-2 h-4 w-4" />
@@ -82,17 +96,17 @@ const Projects = () => {
                   </div>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="p-6 flex-grow">
+                <CardContent className="flex-grow">
                   <ul className="list-disc pl-4 space-y-2">
                     {project.achievements.map((achievement, i) => (
                       <li key={i} className="text-sm">{achievement}</li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="p-6 pt-0 mt-auto">
+                <CardFooter className="p-6 pt-0">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
-                      <Badge key={i}>{tag}</Badge>
+                      <Badge key={i} variant="secondary">{tag}</Badge>
                     ))}
                   </div>
                 </CardFooter>

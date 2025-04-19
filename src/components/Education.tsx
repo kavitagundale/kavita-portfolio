@@ -13,10 +13,30 @@ interface EducationItem {
 const educationItems: EducationItem[] = [
   {
     degree: "Bachelor's Degree in Mechanical Engineering",
-    duration: "Aug 2016 - Oct 2019",
-    certifications: [
-      "Full Stack Developer Certification"
-    ]
+    duration: "Aug 2016 - Oct 2019"
+  }
+];
+
+const certifications = [
+  { 
+    name: "Full Stack Developer Certification", 
+    issuer: "Professional Certification", 
+    year: "2023" 
+  },
+  { 
+    name: "AWS Certified Developer", 
+    issuer: "Amazon Web Services", 
+    year: "2022" 
+  },
+  { 
+    name: "React Developer Certification", 
+    issuer: "Meta", 
+    year: "2021" 
+  },
+  { 
+    name: "PHP Advanced Certification", 
+    issuer: "PHP.org", 
+    year: "2020" 
   }
 ];
 
@@ -90,11 +110,7 @@ const Education = () => {
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-6">Certifications</h3>
           <div className="grid gap-4 md:grid-cols-3">
-            {[
-              { name: "AWS Certified Developer", issuer: "Amazon Web Services", year: "2022" },
-              { name: "React Developer Certification", issuer: "Meta", year: "2021" },
-              { name: "PHP Advanced Certification", issuer: "PHP.org", year: "2020" }
-            ].map((cert, index) => (
+            {certifications.map((cert, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

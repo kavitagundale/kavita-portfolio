@@ -11,32 +11,32 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@example.com",
-    href: "mailto:hello@example.com"
+    value: "gundalekavita@gmail.com",
+    href: "mailto:gundalekavita@gmail.com"
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567"
+    value: "708-343-0206",
+    href: "tel:7083430206"
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "osmanpura, Chh.Smbhajinagar",
     href: "#"
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/johndoe",
-    href: "https://github.com/johndoe"
+    value: "github.com/kavitagundale",
+    href: "https://github.com/kavitagundale"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/johndoe",
-    href: "https://linkedin.com/in/johndoe"
+    value: "linkedin.com/in/kavita-gundale",
+    href: "https://www.linkedin.com/in/kavita-gundale-056743210"
   }
 ];
 
