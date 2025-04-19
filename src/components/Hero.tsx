@@ -20,7 +20,7 @@ const Hero = () => {
               Hello, I'm
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-              John Doe
+              Kavita Gundale
             </h1>
             <div className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 h-[40px] sm:h-[44px] md:h-[48px]">
               <TypeAnimation
@@ -42,9 +42,18 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-3 sm:gap-4">
-              <Button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-sm sm:text-base">
-                <Download size={16} className="sm:size-18" />
-                Download Resume
+              <Button 
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-sm sm:text-base"
+                asChild
+              >
+                <a 
+                  href="https://drive.google.com/file/d/1cmo9VsGPbjjfDWDq2sdhpmxr5nAEmA8f/view?usp=drivesdk" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Download size={16} className="sm:size-18" />
+                  Download Resume
+                </a>
               </Button>
               <Button variant="outline" className="flex items-center gap-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 text-sm sm:text-base">
                 <Mail size={16} className="sm:size-18" />
@@ -104,3 +113,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
